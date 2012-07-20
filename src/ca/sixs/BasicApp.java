@@ -8,6 +8,12 @@
  */
 
 package ca.sixs;
+/**
+*
+* @author John O'Conner (John.OConner@sun.com)
+* modified by @author Rgr
+*/
+
 import java.awt.Font;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -17,11 +23,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
-/**
- *
- * @author John O'Conner (John.OConner@sun.com)
- * modified by @author Rgr
- */
+
 public class BasicApp implements Runnable {
     
     JFrame mainFrame;
