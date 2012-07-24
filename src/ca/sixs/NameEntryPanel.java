@@ -23,6 +23,7 @@ import org.jdesktop.application.Resource;
 import org.jdesktop.application.ResourceMap;
 
 
+@SuppressWarnings("serial")
 public class NameEntryPanel extends javax.swing.JPanel {
     
     @Resource
