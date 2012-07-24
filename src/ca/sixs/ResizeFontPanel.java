@@ -90,15 +90,40 @@ public class ResizeFontPanel extends javax.swing.JPanel {
 
         GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
+        layout.setAutoCreateGaps(true);
         layout.setHorizontalGroup(
         		layout.createParallelGroup(GroupLayout.Alignment.LEADING).
-        		addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+        		addGroup(layout.createSequentialGroup()).
+        		/*addGap(WIDTH).*/addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+        				.addComponent(btnMakeLarger)
+        				.addComponent(btnMakeSmaller))./*addGap(WIDTH).*/
+        		addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)/*.addGap(WIDTH)*/
         );
         layout.setVerticalGroup(
         		layout.createParallelGroup(GroupLayout.Alignment.LEADING).
-        		addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        		addGroup(layout.createSequentialGroup()
+        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+        				.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        				.addGroup(layout.createSequentialGroup()
+        						.addComponent(btnMakeLarger)
+//                      .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+        						.addComponent(btnMakeSmaller))
+//              .addContainerGap())
+                 )
+             )         
         );
         		
+   
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
 //        layout.setHorizontalGroup(
 //            layout.createParallelGroup(GroupLayout.Alignment.LEADING)

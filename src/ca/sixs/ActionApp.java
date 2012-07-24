@@ -39,7 +39,8 @@ public class ActionApp extends SingleFrameApplication {
     protected void startup() {
         ApplicationContext ctxt = getContext();
         panel = new ResizeFontPanel(ctxt);
-        Application app = Application.getInstance(ActionApp.class);
+        @SuppressWarnings("unused")
+		Application app = Application.getInstance(ActionApp.class);
         ApplicationActionMap map = ctxt.getActionMap(panel);
         
         menuBar = new JMenuBar();
