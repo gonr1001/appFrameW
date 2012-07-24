@@ -33,72 +33,38 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 
-public class ActionApp implements Runnable { //extends Runnable { //SingleFrameApplication {
+public class ActionApp extends SingleFrameApplication {
     ResizeFontPanel panel;
     JMenuBar menuBar;
-    JMenu menuFont;
+    JMenu mnuFont;
     JMenuItem miIncreaseSize;
     JMenuItem miDecreaseSize;
     
-    JFrame mainFrame;
-    JLabel label;
-    
-    public void run() {
-        mainFrame = new JFrame("BasicApp");
-        label = new JLabel("Hello, world!");
-        label.setFont(new Font("SansSerif", Font.PLAIN, 22));
-        mainFrame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-        mainFrame.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                mainFrame.setVisible(false);
-                // perform any other operations you might need
-                // before exit
-                System.exit(0);
-            }
-        });
-        mainFrame.add(label);
-        mainFrame.pack();
-        mainFrame.setVisible(true);
+    @Override
+    protected void startup() {
+        ApplicationContext ctxt = getContext();
+        panel = new ResizeFontPanel(ctxt);
+        Application app = Application.getInstance(ActionApp.class);
+        ApplicationActionMap map = ctxt.getActionMap(panel);
+        
+        menuBar = new JMenuBar();
+        mnuFont = new JMenu();
+        mnuFont.setName("mnuFont");
+
+        miIncreaseSize = new JMenuItem(map.get("makeLarger"));
+        miDecreaseSize = new JMenuItem(map.get("makeSmaller"));
+
+        mnuFont.add(miIncreaseSize);
+        mnuFont.add(miDecreaseSize);
+        menuBar.add(mnuFont);
+
+        getMainFrame().setJMenuBar(menuBar);
+        
+        show(panel);
     }
     
-//    @Override
-//    protected void startup() {
-//        ApplicationContext ctxt = getContext();
-//        panel = new ResizeFontPanel(ctxt);
-//        Application app = Application.getInstance(ActionApp.class);
-//         ApplicationActionMap map = ctxt.getActionMap(panel);
-//        
-//        menuBar = new JMenuBar();
-//        menuFont = new JMenu();
-//        menuFont.setName("menuFont");
-//
-//        miIncreaseSize = new JMenuItem(map.get("makeLarger"));
-//        miDecreaseSize = new JMenuItem(map.get("makeSmaller"));
-//
-//        menuFont.add(miIncreaseSize);
-//        menuFont.add(miDecreaseSize);
-//        menuBar.add(menuFont);
-//
-//        getMainFrame().setJMenuBar(menuBar);
-//        
-//        show(panel);
-//    }
-    
-    
-    /*
-     * Applications should never interact with the GUI
-     * components from outside the event dispatch thread.
-     */
     public static void main(String[] args) {
-        //Application.launch(ActionApp.class, args);
-    	Runnable app = new ActionApp();
-        try {
-            SwingUtilities.invokeAndWait(app);
-        } catch (InvocationTargetException ex) {
-            ex.printStackTrace();
-        } catch (InterruptedException ex) {
-        	 ex.printStackTrace();
-        }
+        Application.launch(ActionApp.class, args);
     }
 }
 
