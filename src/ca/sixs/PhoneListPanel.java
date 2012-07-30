@@ -22,6 +22,7 @@ import java.util.List;
 
 import javax.swing.AbstractListModel;
 import javax.swing.ActionMap;
+import javax.swing.GroupLayout;
 
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ApplicationContext;
@@ -86,9 +87,36 @@ public class PhoneListPanel extends javax.swing.JPanel {
         lstPhoneEntry.setModel(_listModel);
         lstPhoneEntry.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(lstPhoneEntry);
+        
+        GroupLayout layout = new GroupLayout(this);
+        this.setLayout(layout);
+        layout.setAutoCreateGaps(true);
+        
+        layout.setHorizontalGroup(
+        		layout.createSequentialGroup()
+        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)            	 
+        				.addComponent(lblName)
+        				.addComponent(txtName))
+        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+        				.addComponent(lblPhone)
+        				.addComponent(txtPhone))
+        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+        				.addComponent(btnAddEntry))
+      	
+        );
+        layout.setVerticalGroup(
+        		layout.createSequentialGroup()
+            	.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            			.addComponent(lblName) 
+            			.addComponent(lblPhone))
+            	.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 
-//        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
-//        this.setLayout(layout);
+            			.addComponent(txtName) 
+            			.addComponent(txtPhone)
+            			.addComponent(btnAddEntry))   				
+        );	
+
+
 //        layout.setHorizontalGroup(
 //            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
 //            .add(layout.createSequentialGroup()
