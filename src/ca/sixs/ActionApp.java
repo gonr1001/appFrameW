@@ -31,7 +31,7 @@ import javax.swing.JMenuItem;
 public class ActionApp extends SingleFrameApplication {
     ResizeFontPanel panel;
     JMenuBar menuBar;
-    JMenu mnuFont;
+    JMenu menuFont;
     JMenuItem miIncreaseSize;
     JMenuItem miDecreaseSize;
     
@@ -44,15 +44,15 @@ public class ActionApp extends SingleFrameApplication {
         ApplicationActionMap map = ctxt.getActionMap(panel);
         
         menuBar = new JMenuBar();
-        mnuFont = new JMenu();
-        mnuFont.setName("mnuFont");
+        menuFont = new JMenu();
+        menuFont.setName("menuFont");
 
         miIncreaseSize = new JMenuItem(map.get("makeLarger"));
         miDecreaseSize = new JMenuItem(map.get("makeSmaller"));
 
-        mnuFont.add(miIncreaseSize);
-        mnuFont.add(miDecreaseSize);
-        menuBar.add(mnuFont);
+        menuFont.add(miIncreaseSize);
+        menuFont.add(miDecreaseSize);
+        menuBar.add(menuFont);
 
         getMainFrame().setJMenuBar(menuBar);
         

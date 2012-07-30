@@ -91,53 +91,38 @@ public class ResizeFontPanel extends javax.swing.JPanel {
         GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
         layout.setAutoCreateGaps(true);
+      
         layout.setHorizontalGroup(
-        		layout.createParallelGroup(GroupLayout.Alignment.LEADING).
-        		addGroup(layout.createSequentialGroup()).
-        		/*addGap(WIDTH).*/addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+        		layout.createSequentialGroup().
+        		addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
         				.addComponent(btnMakeLarger)
-        				.addComponent(btnMakeSmaller))./*addGap(WIDTH).*/
-        		addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)/*.addGap(WIDTH)*/
+        				.addComponent(btnMakeSmaller))
+        		.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-        		layout.createParallelGroup(GroupLayout.Alignment.LEADING).
-        		addGroup(layout.createSequentialGroup()
-        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-        				.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-        				.addGroup(layout.createSequentialGroup()
-        						.addComponent(btnMakeLarger)
-//                      .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-        						.addComponent(btnMakeSmaller))
-//              .addContainerGap())
-                 )
-             )         
-        );
-        		
+        		layout.createSequentialGroup()
+            	.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            			.addGroup(layout.createSequentialGroup()
+            			.addComponent(btnMakeLarger)  
+            			.addComponent(btnMakeSmaller))
+        				.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))      				
+        );	
    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        layout.setHorizontalGroup(
-//            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-//            .add(layout.createSequentialGroup()
-//                .addContainerGap()
-//                .add(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-//                    .add(btnMakeLarger)
-//                    .add(btnMakeSmaller))
-//                .addPreferredGap(GroupLayout.Alignment.TRAILING)
-//                .add(jScrollPane1, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-//                .addContainerGap())
+                
+// Original  code using another layout       
+//        layout.setHorizontalGroup( *
+//            layout.createParallelGroup(GroupLayout.Alignment.LEADING) *
+//            .add(layout.createSequentialGroup() *
+//                .addContainerGap() *
+//                .add(layout.createParallelGroup(GroupLayout.Alignment.LEADING) *
+//                    .add(btnMakeLarger)*
+//                    .add(btnMakeSmaller))*
+//                .addPreferredGap(GroupLayout.Alignment.TRAILING)*
+//                .add(jScrollPane1, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)*
+//                .addContainerGap())*
 //        );
-//        layout.setVerticalGroup(
-//            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+//        layout.setVerticalGroup(*
+//            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)*
 //            .add(layout.createSequentialGroup()
 //                .addContainerGap()
 //                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
