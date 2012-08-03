@@ -94,33 +94,40 @@ public class PhoneListPanel extends javax.swing.JPanel {
         
         layout.setHorizontalGroup(
         		layout.createSequentialGroup()
-        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)            	 
-        				.addComponent(lblName)
-        				.addComponent(txtName))
-//        				.addComponent(jScrollPane1))
-        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-        				.addComponent(lblPhone)
-        				.addComponent(txtPhone))
-        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-        				.addComponent(btnAddEntry))
-  //      		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)            	 
-        			.addGroup(layout.createSequentialGroup())
+        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING) 
+        				.addGroup(layout.createSequentialGroup()           	 
+        						.addComponent(lblName)
+        						.addComponent(lblPhone))
+        				.addGroup(layout.createSequentialGroup()
+        						.addComponent(txtName)
+        						.addComponent(txtPhone)
+        						.addComponent(btnAddEntry))
         				.addComponent(jScrollPane1)
-        		
+        				.addGroup(layout.createSequentialGroup()
+        				.addComponent(btnSave)
+        				.addComponent(btnLoad)
+            			.addComponent(btnClear))
+        				.addComponent(txtStatus)
+        		)		
+        
       	
         );
         layout.setVerticalGroup(
         		layout.createSequentialGroup()
-            	.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-            			.addComponent(lblName) 
-            			.addComponent(lblPhone))
-            	.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-            			.addComponent(txtName) 
-            			.addComponent(txtPhone)
-            			.addComponent(btnAddEntry))
-            	.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-            			.addComponent(jScrollPane1))
-            			
+        				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+        						.addComponent(lblName) 
+        						.addComponent(lblPhone))
+        				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+        						.addComponent(txtName)
+        						.addComponent(txtPhone)
+        						.addComponent(btnAddEntry))      						
+            			.addComponent(jScrollPane1)
+            			.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            			.addComponent(btnSave)
+            			.addComponent(btnLoad)
+            			.addComponent(btnClear)
+            			)
+        				.addComponent(txtStatus)	
         );	
 
 
