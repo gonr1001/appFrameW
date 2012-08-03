@@ -97,11 +97,16 @@ public class PhoneListPanel extends javax.swing.JPanel {
         		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)            	 
         				.addComponent(lblName)
         				.addComponent(txtName))
+//        				.addComponent(jScrollPane1))
         		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
         				.addComponent(lblPhone)
         				.addComponent(txtPhone))
         		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
         				.addComponent(btnAddEntry))
+  //      		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)            	 
+        			.addGroup(layout.createSequentialGroup())
+        				.addComponent(jScrollPane1)
+        		
       	
         );
         layout.setVerticalGroup(
@@ -110,10 +115,12 @@ public class PhoneListPanel extends javax.swing.JPanel {
             			.addComponent(lblName) 
             			.addComponent(lblPhone))
             	.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-
             			.addComponent(txtName) 
             			.addComponent(txtPhone)
-            			.addComponent(btnAddEntry))   				
+            			.addComponent(btnAddEntry))
+            	.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            			.addComponent(jScrollPane1))
+            			
         );	
 
 
