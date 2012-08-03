@@ -57,9 +57,29 @@ public class NameEntryPanel extends javax.swing.JPanel {
                 btnGreetActionPerformed(evt);
             }
         });
-
         GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
+        layout.setAutoCreateGaps(true);
+      
+        layout.setHorizontalGroup(
+        		layout.createSequentialGroup().
+        		addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+        				.addComponent(lblNamePrompt)
+        				.addComponent(btnGreet))
+        		.addComponent(txtName)
+ //       		.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+        		layout.createSequentialGroup()
+ //           	.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            			.addGroup(layout.createSequentialGroup()
+            			.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+            			.addComponent(lblNamePrompt)
+            			.addComponent(txtName))
+        				.addComponent(btnGreet))    				
+        );
+//        GroupLayout layout = new GroupLayout(this);
+//        this.setLayout(layout);
 //        layout.setHorizontalGroup(
 //            layout.createParallelGroup(layout.getLayoutStyle(Alignment.LEADING)
 //            .add(layout.createSequentialGroup()
